@@ -1,0 +1,21 @@
+experiment_name: qwen25_3b_05b
+
+target_model: Qwen/Qwen2.5-3B-Instruct
+draft_model: Qwen/Qwen2.5-0.5B-Instruct
+
+dataset_name: specbench
+specbench_path: data/processed/prompts.jsonl
+max_samples: 20
+
+generation:
+  max_new_tokens: 128
+  speculative_k: 3
+  temperature: 0.0
+
+draft_precisions:
+  - bf16
+  - int8
+  - int4
+
+seed: 42
+device: cuda
